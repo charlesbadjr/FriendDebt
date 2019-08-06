@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import {Segment, Button, Form, Header } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
-
-
-
+import axios from 'axios';
 
 
 
 class DebtForm extends Component {
-    state = { name: '', description: '', 
-              amount: '', payments: '', 
+    state = { name: '', description: '', payOffDate:'', 
+              amount: '', amountleft:'', payments: '', 
               interestAmount: '' };
   
     handleChange = (event) => {
@@ -25,7 +23,7 @@ class DebtForm extends Component {
 
 
     render() {
-      const { name, description, amount, payments, intrestAmount  } = this.state;
+      const { amount, payments, amountleft, description, payOffDate, interestAmount } = this.state;
      
      
       return (
@@ -35,23 +33,24 @@ class DebtForm extends Component {
             <Form.Field>
                
                <input
+                 autoFocus
                  required
-                 id="fName"
+                 id="amount"
                  icon="user"
                  name="name"
-                 value={name}
-                 placeholder="Your Name"
+                 value={amount}
+                 placeholder="Total Amount"
                  onChange={this.handleChange}
                  />
              </Form.Field>
              <Form.Field>  
               <input
                 required
-                id="fName"
+                id="description"
                 icon="user"
                 name="name"
-                value={name}
-                placeholder="Your Name"
+                value={description}
+                placeholder="Debt Description"
                 onChange={this.handleChange}
                 />
             </Form.Field>
@@ -60,8 +59,8 @@ class DebtForm extends Component {
                 required
                 id="Amount"
                 name="amount"
-                value={amount}
-                placeholder="Amount Due"
+                value={payOffDate}
+                placeholder="Pay off Date"
                 onChange={this.handleChange}
               />
             </Form.Field>
@@ -79,20 +78,9 @@ class DebtForm extends Component {
             <Form.Field>
               
               <input
-                required
-                id="description"
-                name="description"
-                value={description}
-                placeholder="Description of Debt"
-                onChange={this.handleChange}
-              />
-            </Form.Field>
-            <Form.Field>
-              
-              <input
                 id="APR"
                 name="intrestAmount"
-                value={intrestAmount}
+                value={interestAmount}
                 placeholder="Apply Intrest?"
                 onChange={this.handleChange}
               />

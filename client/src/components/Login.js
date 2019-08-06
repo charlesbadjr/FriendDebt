@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Segment, Form, Button, Divider, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 import { handleLogin } from '../reducers/user';
 
 class Login extends Component {
@@ -59,7 +60,9 @@ class Login extends Component {
             </Form>
          </Grid.Column>
          <Grid.Column verticalAlign='middle' >
-            <Button content="Sign Up" icon='signup' size='big' />
+           <Link to='/register'>
+             <Button content="Sign Up" icon='signup' size='big' />
+           </Link>
          </Grid.Column>   
         </Grid>
         <Divider vertical>OR</Divider>
@@ -70,3 +73,4 @@ class Login extends Component {
 
 export default connect()(Login);
 
+       

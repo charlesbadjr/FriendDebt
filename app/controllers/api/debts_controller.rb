@@ -19,7 +19,7 @@ class Api::DebtsController < ApplicationController
   private 
 
   def debt_params
-    debts.permit(debt).only{:}
+    debts.permit(debt).only{:amount, :payments, :amountleft, :userId, :description, :payOffDate }
   end
 
 end

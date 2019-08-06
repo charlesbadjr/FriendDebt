@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {Header, Table, Icon, Segment } from 'semantic-ui-react';
-import $ from 'axios';
+import axios from 'axios';
 
 
 
 
 class LoanChart extends Component {
-state = {paymentAmount:'', amount:'', payDate:'', description:'' };
+state = {paymentAmount:'', amount:'', payDate:'', description:'', interestAmount:'' };
   
 // need to import data from database
 
