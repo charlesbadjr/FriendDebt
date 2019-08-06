@@ -1,12 +1,23 @@
 class Api::ContactsController < ApplicationController
+   before_action: 
 
     def index
-       render json: Contact.all
+       
+        render json: @contacts.all
+    end
+
+    def new
+      @contacts = Contact.new(contact_params)
+
     end
 
     def create
-        contact = Contact.create(contact_params)
-        render json: contact
+        @contacts = Contact.create(contact_params)
+        if @contacts.save
+        render json: @contacts
+        else
+
+        end
     end
 
     def delete
@@ -16,5 +27,5 @@ class Api::ContactsController < ApplicationController
     private
 
     def contact_params
-        params.require(:contact).permit(:)
+        params.require(:contact).permit(:name, :description, :something, :beer)
 end
