@@ -6,7 +6,7 @@ import $ from 'axios';
 
 
 class LoanChart extends Component {
-
+state = {paymentAmount:'', amount:'', payDate:'', description:'' };
   
 // need to import data from database
 
@@ -64,7 +64,7 @@ otherAmount = (a) => {
                   </Table.Row>  
 
                   <Table.Row positive>
-                   <Table.Cell> {Date} </Table.Cell>
+                   <Table.Cell> {this.state.payDate} </Table.Cell>
                    <Table.Cell> {this.state.amount} </Table.Cell>
                    <Table.Cell> Hold </Table.Cell>
                    <Table.Cell> Hold </Table.Cell>

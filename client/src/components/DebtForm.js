@@ -99,7 +99,7 @@ class DebtForm extends Component {
             </Form.Field>
             
             <Segment textAlign="center" basic>
-              <Link to="./LoanChart">
+              <Link to="./PaymentHistory">
                  <Button color="red" 
                          icon="dollar" 
                          primary type="submit" > Submit </Button>

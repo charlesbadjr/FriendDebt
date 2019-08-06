@@ -3,7 +3,7 @@ import { Header, Segment, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
-
+state = { name:'', amount:'', payments:'', description:'', interest:''};
 
   render() {
     return (
@@ -14,8 +14,14 @@ class Home extends Component {
       </div>
       <div>
         <Segment>
-           <Link to="/DebtForm"> 
-              <Button > Create A Table </Button>
+           <Link to="/CreateForm"> 
+              <Button 
+                name = {this.state.name}
+                amount = {this.state.amount}
+                payments = {this.state.payments}
+                description = {this.state.description}
+                interest = {this.state.interest}
+               > Create A Table </Button>
            </Link>
         </Segment>
       </div>

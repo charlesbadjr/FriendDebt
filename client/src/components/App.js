@@ -14,10 +14,7 @@ import FetchUser from './FetchUser';
 
 class App extends Component {
 
-
   render() {
-    
-    
     
     return (
       <div>
