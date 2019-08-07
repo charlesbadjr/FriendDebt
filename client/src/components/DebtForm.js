@@ -17,8 +17,8 @@ class DebtForm extends Component {
   
     handleSubmit = (event) => {
       event.preventDefault();
-      
-    }
+
+    };
 
 
 
