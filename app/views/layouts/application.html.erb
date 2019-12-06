@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Friend Debts</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <header class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+             <a href="/">Home</a> 
+             <a href="/static_pages/about">About Us</a> 
+             <a href="/feedbacks/new">Write Us</a> 
+       
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <%  if user_signed_in? %>
+                <li> <a href="destroy_user_session_path", method: :delete >Log Out </a> </li>
+                <li> <a href="/users/:<%=current_user.id%>/debts/new">Add Debt </a> </li>
+                <li> <a href="/users/:<%=current_user.id%>/debts/index">See Debts </a> </li>
+                <li> <a href="/static_pages/profile">Profile</a></li> 
+              <% else %>
+                <li> <a href="/users/sign_up">Get Started </a> </li>
+              <%end%>
+            </ul>
+         </div>
+       </nav>
+     </header>
+     <div class="container">
+       <%= yield %>
+     </div > 
+    
+  </body>
+</html>

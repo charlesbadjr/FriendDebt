@@ -1,0 +1,17 @@
+
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ 
+.field {
+    height: 10px;
+    width: 30%;
+}
+
+.ui_form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
