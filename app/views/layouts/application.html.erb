@@ -11,18 +11,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <body>
+  <body class="body" >  
     <header class="container">
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-             <h2>Welcome <%= current_user.first_name %> </h2>
-             <ul class="nav navbar-nav">
-               <li> <%= link_to 'Home', root_path %> </li> 
-               <li> <%= link_to 'About Us', new_feedback_path %> </li> 
-               <li> <%= link_to 'Write Us', new_feedback_path%> </li> 
+             <%  if user_signed_in? %>
+                   <h2>Welcome <%= current_user.first_name %> </h2>
+                 <% else %>
+                    <h2> Friend Debts </h2>
+             <% end %>
+             <ul class="nav navbar-nav"> 
+               <li> <%= link_to 'Home', new_feedback_path %> </li> 
+               <li> <%= link_to 'About Us', new_feedback_path  %> </li> 
+               <li> <%= link_to 'Write Us', new_feedback_path %> </li> 
        
-          </div>
+           </div>
           <ul class="nav navbar-nav navbar-right">
             <%  if user_signed_in? %>
                 <li> <%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
@@ -42,8 +46,9 @@
      </header>
      <div class="container">
        <%= yield %>
-       <div >
-         <%= render "layouts/footer" %>
+     </div > 
+     <div class="footer" >
+       <%= render "layouts/footer" %>
      </div > 
     
   </body>
