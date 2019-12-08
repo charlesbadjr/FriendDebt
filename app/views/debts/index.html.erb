@@ -1,2 +1,12 @@
-<h1>Debts#index</h1>
-<p>Find me in app/views/debts/index.html.erb</p>
+
+<div >
+   <h1>Your current Debts are: </h1>
+  <ul>
+    <% @debts.each do |debt| %>
+      <li><%= link_to debt.debt_to, [@user, debt] %> <%= debt.description %> </li>
+    <% end %>
+  </ul>
+
+ <%= link_to 'Create a new Debt', new_user_debt_path(@user) %>
+
+ 

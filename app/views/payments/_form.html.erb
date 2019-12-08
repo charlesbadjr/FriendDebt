@@ -1,0 +1,21 @@
+<h1><%= @debt.id ? 'Make a Payment' : 'Edit Payment' %></h1>
+     <hr />
+<%= form_for [@debt, @payment] do |f| %>
+  <div class="field"> 
+    <%= f.label :amount_paid %>
+      <br />
+     <%= f.text_field :amount_paid, required: true, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :paid %>
+      <br />
+    <%= f.check_box :paid, required: true %>
+  </div> 
+  <div class="field">
+    <%= f.label :comments %>
+     <br />
+    <%= f.text_area :comments, required: true %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

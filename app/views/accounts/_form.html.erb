@@ -1,0 +1,29 @@
+
+<h1><%= @account.first_name ? 'Edit Account' : 'Create an Account' %></h1>
+<hr />
+<%= form_for @account do |f| %>
+<div class="form">    
+  <div class="field" > 
+    <%= f.label "First Name" %>
+    <%= f.text_field :first_name, required: true %>
+  </div>
+     <br />
+  <div class="field" >
+    <%= f.label "Last Name" %>
+    <%= f.text_field :last_name, required: true %>
+  </div>
+    <br />
+  <div class="field" >
+    <%= f.label "Email" %>
+    <%= f.text_field :email %>
+  </div>
+    <br />
+  <div class="field" >
+    <%= f.label "Debt Owed" %>
+    <%= f.text_field :debt_owed, required: true %>
+  </div>
+   <div class="btn btn-primary">
+  <%= f.submit %>
+  </div>
+<% end %>
+</div>

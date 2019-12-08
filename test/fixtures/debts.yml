@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total_debt: 1.5
+  debt_to: MyString
+  description: MyText
+  payment_amount: 1.5
+  interest_rate: 1.5
+  total_number_payments: 1
+  amount_remaining: 1.5
+  account: one
+
+two:
+  total_debt: 1.5
+  debt_to: MyString
+  description: MyText
+  payment_amount: 1.5
+  interest_rate: 1.5
+  total_number_payments: 1
+  amount_remaining: 1.5
+  account: two

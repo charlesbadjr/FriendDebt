@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root to: 'accounts#index'
-  devise_for :users
+
+  devise_for :users 
   
-  resources :accounts do
+  resources :users do
     resources :debts
+    resources :accounts
   end
 
   scope 'debts/:debt_id', as: 'debt' do

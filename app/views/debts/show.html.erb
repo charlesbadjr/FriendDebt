@@ -1,2 +1,18 @@
-<h1>Debts#show</h1>
-<p>Find me in app/views/debts/show.html.erb</p>
+<div >
+<table class="debttable" >
+  <tr>
+    <th> Debtor </th>
+    <th> Description </th>
+    <th> Amount </th>
+    <th> Interest Amount </th>
+    <th> Payments </th>
+  </tr>
+ <tr>
+   <td <%= @debt.debt_to %> </td>
+   <td <%= @debt.description %> </td>
+   <td <%= @debt.amount_remaining %> </td>
+   <td <%= @debt.interest_rate %> </td>
+   <td <%= @debt.payment_amount %> </td>
+</tr>
+
+</table>

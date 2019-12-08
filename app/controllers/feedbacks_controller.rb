@@ -10,7 +10,6 @@ class FeedbacksController < ApplicationController
 
   def new
    @feedback = Feedback.new
-   render partial: "form"
   end
 
   def create

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
     <title>Friend Debts</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,19 +16,25 @@
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-             <a href="/">Home</a> 
-             <a href="/static_pages/about">About Us</a> 
-             <a href="/feedbacks/new">Write Us</a> 
+             <h2>Welcome <%= current_user.first_name %> </h2>
+             <ul class="nav navbar-nav">
+               <li> <%= link_to 'Home', root_path %> </li> 
+               <li> <%= link_to 'About Us', new_feedback_path %> </li> 
+               <li> <%= link_to 'Write Us', new_feedback_path%> </li> 
        
           </div>
           <ul class="nav navbar-nav navbar-right">
             <%  if user_signed_in? %>
-                <li> <a href="destroy_user_session_path", method: :delete >Log Out </a> </li>
-                <li> <a href="/users/:<%=current_user.id%>/debts/new">Add Debt </a> </li>
-                <li> <a href="/users/:<%=current_user.id%>/debts/index">See Debts </a> </li>
-                <li> <a href="/static_pages/profile">Profile</a></li> 
+                <li> <%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+                <li> <%= link_to 'Add Debt', new_user_debt_path(@user) %> </li>
+                <li> <%= link_to 'My Debts', user_debts_path(@user) %> </li>
+                <li> <%= link_to 'Profile', user_accounts_path(@user) %> </li>
+                <div class="badge"
+                   <%= link_to 'New Debts', user_accounts_path(@user) %>
+                </div>
+
               <% else %>
-                <li> <a href="/users/sign_up">Get Started </a> </li>
+                <li> <%= link_to 'Get Started', new_user_session_path %> </li>
               <%end%>
             </ul>
          </div>
@@ -35,6 +42,8 @@
      </header>
      <div class="container">
        <%= yield %>
+       <div >
+         <%= render "layouts/footer" %>
      </div > 
     
   </body>

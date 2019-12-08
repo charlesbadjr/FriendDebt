@@ -1,2 +1,26 @@
-<h1>Accounts#show</h1>
-<p>Find me in app/views/accounts/show.html.erb</p>
+<div >
+  <h1>Welcome <%= @account.first_name %></h1>
+
+
+
+  <div> 
+    
+    <p> You have a new loan request from: <%= %> </p>
+    <p> You have <%= %> unpaid debts </p>
+    <div>
+       <h1 class="header" >Click a Debt To View info</h1>
+          <span> or </span>
+       <%= link_to 'Create a Debt', new_account_debt_path  %>
+     
+    </div>
+  </div>
+
+  <div>
+    <p> Update your information:</p>
+    <ul>
+    <% @account.each do |account| %>
+    <li><%= link_to edit_account_path,  %> </li>
+    <% end %>
+  </ul>
+  </div>  
+</div>

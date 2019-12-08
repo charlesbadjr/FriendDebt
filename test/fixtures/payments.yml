@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  actual_payment_amount: 1.5
+  amount_interest: 1.5
+  amount_principle: 1.5
+  total_todate: 1.5
+  comment: MyText
+  paid: false
+  debt: one
+
+two:
+  actual_payment_amount: 1.5
+  amount_interest: 1.5
+  amount_principle: 1.5
+  total_todate: 1.5
+  comment: MyText
+  paid: false
+  debt: two
