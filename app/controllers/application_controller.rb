@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
     before_action :authenticate_user!
     before_action :configure_permitted_parameters, if: :devise_controller?
+<<<<<<< HEAD
    
+=======
+    skip_before_action :authenticate_user!, only: [:about, :home, :blog]
+
+>>>>>>> database_update
     private
   
     def configure_permitted_parameters

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'accounts#index'
+  root 'static_pages#home'
 
   devise_for :users 
   
@@ -14,5 +14,12 @@ Rails.application.routes.draw do
 
   resources :feedbacks
 
+<<<<<<< HEAD
+=======
+  get '/about', to: 'static_pages#about'
+  get '/home', to: 'static_pages#home'
+  get '/blog', to: 'static_pages#blog'
+  
+>>>>>>> database_update
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

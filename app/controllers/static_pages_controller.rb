@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+<<<<<<< HEAD
    
 
   def index
@@ -14,4 +15,18 @@ class StaticPagesController < ApplicationController
   end
 
 
+=======
+ 
+ 
+  def about
+  end
+
+  def home
+  end
+
+  def blog
+  end
+
+  
+>>>>>>> database_update
 end
