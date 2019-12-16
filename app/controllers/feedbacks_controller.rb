@@ -1,5 +1,5 @@
 class FeedbacksController < ApplicationController
-  
+  skip_before_action :authenticate_user!
   def index
    @feedbacks = Feedback.all
   end

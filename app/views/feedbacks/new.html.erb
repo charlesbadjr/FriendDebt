@@ -1,28 +1,58 @@
 
+<h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+<hr/>
 
-<h1>Write Us: </h1>
-<div class="ui form" >
-   <%= form_for @feedback do |f| %> 
-   <div class="feild"> 
-     <%= f.label "Name"  %>  
-     <br/>
-     <%= f.text_field :name, :required => true, autofocus: true %>
-   </div>
-   <div class="feild"> 
-     <%= f.label "Email"  %>
-     <br/>
-     <%= f.text_field :email %> 
-   </div>
-   <div class="feild">
-      <%= f.label "Phone Number"  %>
-      <br/>
-      <%= f.text_field :phone_number %> 
-   </div> 
-   <div class="feild">
-      <%= f.label "Comment"  %>
-      <br/>
-      <%= f.text_area :comments, :required => true %> 
-   </div>
-    <%= f.submit "Submit", class: 'ui button primary' %> 
+<p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+    a matter of hours to help you.</p>
+
+<div class="row">
+
+    <div class="col-md-12 mb-md-2 mb-4">
+        <form id="contact-form" name="feedbacks" action="" method="POST">
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <input type="text" id="name" name="name" class="form-control">
+                        <label for="name" class="">Your name</label>
+                    </div>
+                </div>
+               
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <input type="text" id="name" name="phone_number" class="form-control">
+                        <label for="phone_number" class="">Contact Number</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+
+              <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <input type="text" id="email" name="email" class="form-control">
+                        <label for="email" class="">Your Email</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-12">
+                    <div class="md-form">
+                        <textarea type="text" id="message" name="comments" rows="3" class="form-control md-textarea"></textarea>
+                        <label for="comments">Your Message</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="text-center text-md-left">
+            <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+        </div>
+        <div class="status"></div>
+    </div>
 </div>
-<% end %>
+
+</section>

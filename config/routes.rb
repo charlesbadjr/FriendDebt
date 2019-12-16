@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create, :edit]
   end
 
-  resources :feedbacks
+  resources :feedbacks, :path => "writeUs"
 
   get '/about', to: 'static_pages#about'
   get '/home', to: 'static_pages#home'

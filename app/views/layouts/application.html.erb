@@ -24,7 +24,7 @@
              <ul class="nav navbar-nav">
                <li> <%= link_to 'Home', root_path %> </li> 
                <li> <%= link_to 'About Us', about_path %> </li> 
-               <li> <%= link_to 'Write Us', new_feedback_path%> </li>
+               <li> <%= link_to 'Write Us', new_feedback_path %> </li>
                <li> <%= link_to 'Blog Post', blog_path %> </li>  
        
            </div>
@@ -47,10 +47,11 @@
      </header>
      <div class="container">
        <%= yield %>
-     </div > 
-     <div class="footer" >
-       <%= render "layouts/footer" %>
-     </div > 
-    
+     </div>
+         <footer class="page-footer font-small blue">
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+               <a href="https://www.charlieJergins.com" target=_blank, rel=noopener > CharlieJergins.com </a>
+            </div>
+         </footer>
   </body>
 </html>

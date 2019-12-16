@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_12_08_124944) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
+  end 
 
   create_table "payments", force: :cascade do |t|
     t.float "actual_payment_amount"
