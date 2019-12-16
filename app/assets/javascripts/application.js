@@ -15,3 +15,20 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+
+documents.addEventListener('DOMContentLoaded', function() {
+  
+    var flashMessage = document.getElementById("flash")
+    setTimeout(
+      function() {
+        flashMessage.className="hide"
+      }, 300
+    )
+  })
+
+
+  $(window).on('load', function() {
+    $('#mdb-preloader').addClass('loaded');
+  });
+  

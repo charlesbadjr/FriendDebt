@@ -1,7 +1,6 @@
 class DebtsController < ApplicationController
-  before_action :set_user
   before_action :set_debt, only: [:show, :edit, :update, :destroy]
-  
+  before_action :set_user
 
   def index
    @debts = current_user.debts
@@ -12,8 +11,8 @@ class DebtsController < ApplicationController
   end
 
   def new
-   @debt = @user.debts.new
-   render partial: "form"
+   @debt = Debt.new
+   
   end
 
   def edit
@@ -21,7 +20,7 @@ class DebtsController < ApplicationController
   end
 
   def create
-    @debt = @user.debts.new(debt_params)
+    @debt = current_user.debts.new(debt_params)
     if @debt.save
       redirect_to [@user, @debt]
      else
@@ -53,7 +52,8 @@ class DebtsController < ApplicationController
   end
 
   def set_debt
-    @debt = Debt.find(params[:id])
+    @debt = current_user.debts.find(params[:id])
   end
+
 
 end

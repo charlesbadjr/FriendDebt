@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html >
-<head>
+<html lan=en >
+<head >
     <title>Friend Debts</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -19,7 +19,7 @@
           <%  if user_signed_in? %>
               <h2>Welcome <%= current_user.first_name %> </h2>
           <% else %>
-               <h2> Welcome To Friend Debts </h2>
+               <h2> Welcome To Friend Debts! </h2>
             <%end%>
              <ul class="nav navbar-nav">
                <li> <%= link_to 'Home', root_path %> </li> 
@@ -29,25 +29,26 @@
        
            </div>
           <ul class="nav navbar-nav navbar-right">
-            <%  if user_signed_in? %>
-                <li> <%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
-                <li> <%= link_to 'Add Debt', new_user_debt_path(@user) %> </li>
-                <li> <%= link_to 'My Debts', user_debts_path(@user) %> </li>
-                <li> <%= link_to 'Profile', user_accounts_path(@user) %> </li>
-                <div class="badge"
-                   <%= link_to 'New Debts', user_accounts_path(@user) %>
-                </div>
-
+              <%  if user_signed_in? %>
+            <li> <%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+            <li> <%= link_to 'Add Debt', new_user_debt_path(@user) %> </li>
+            <li> <%= link_to 'My Debts', user_debts_path(@user) %> </li>
+            <li> <%= link_to 'Profile', user_accounts_path(@user) %> </li>
+            <div class="badge"
+              <%= link_to 'New Debts', user_accounts_path(@user) %>
+            </div>
               <% else %>
-                <li> <%= link_to 'Get Started', new_user_session_path %> </li>
+            <li> <%= link_to 'Get Started', new_user_session_path %> </li>
               <%end%>
-            </ul>
+          </ul>
          </div>
        </nav>
      </header>
      <div class="container">
+      <% flash.each do |key, value| %>
+         <div id="flash" class="alert alert-<%= key %>"> <%= value %> </div>
+       <% end %>
        <%= yield %>
-     </div>
          <footer class="page-footer font-small blue">
             <div class="footer-copyright text-center py-3">© 2020 Copyright:
                <a href="https://www.charlieJergins.com" target=_blank, rel=noopener > CharlieJergins.com </a>

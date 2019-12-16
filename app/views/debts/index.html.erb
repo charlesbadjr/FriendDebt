@@ -4,6 +4,8 @@
   <ul>
     <% @debts.each do |debt| %>
       <li><%= link_to debt.debt_to, [@user, debt] %> <%= debt.description %> </li>
+
+      
     <% end %>
   </ul>
 

@@ -1,0 +1,20 @@
+
+.hide {
+    display: none;
+  }
+
+  .alert {
+    font-size: 20px;
+    text-align: center;
+   }
+   
+   // "notice" may be something else
+   // just check html element on message
+
+   .alert-notice {
+    background-color: lightgreen;
+   }
+   
+   .alert-alert {
+    background-color: red;
+   }

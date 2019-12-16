@@ -1,5 +1,6 @@
 <h1><%= @debt.id ? 'Make a Payment' : 'Edit Payment' %></h1>
      <hr />
+     
 <%= form_for [@debt, @payment] do |f| %>
   <div class="field"> 
     <%= f.label :amount_paid %>

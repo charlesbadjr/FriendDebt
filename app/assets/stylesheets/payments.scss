@@ -8,3 +8,7 @@
     }
 
     
+    #mdb-preloader.loaded {
+        opacity: 0;
+        transition: .3s ease-in 1s;
+      }

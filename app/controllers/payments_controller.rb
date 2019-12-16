@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  before_action: set_debt, only [:create, :new, :edit, :destroy ]
+  before_action :set_debt, only [:create, :new, :edit, :destroy ]
 
   def index
     @payments = current_user.debts.payment

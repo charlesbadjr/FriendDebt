@@ -22,7 +22,7 @@ class AccountsController < ApplicationController
   def create
     @account = @user.accounts.new(account_params)
     if @account.save
-      redirect_to accounts_path
+      redirect_to [@user, @account]
      else
       render :new
     end
@@ -30,7 +30,7 @@ class AccountsController < ApplicationController
 
   def update 
     if @account.update(account_params)
-      redirect_to @account
+      redirect_to [@user, @account]
     else
       render :edit
     end
@@ -52,7 +52,7 @@ class AccountsController < ApplicationController
   end
 
   def set_account
-    @account = Account.find(params[:id])
+    @account = @user.accounts.find(params[:id])
   end
 
 end
