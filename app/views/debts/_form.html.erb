@@ -1,6 +1,6 @@
 
 <h1 class="header" > Add Some Debt </h1>
-
+<hr />
 <%= form_for [@user, @debt] do |f| %>
 
 <div class="form">    
@@ -29,8 +29,6 @@
     <%= f.text_field :interest_rate, required: true %>
   </div>
    <br />
-   <div class="btn btn-primary">
-  <%= f.submit %>
-  </div>
+   <button class="btn btn-primary"> Submit </button>
 <% end %>
 </div>

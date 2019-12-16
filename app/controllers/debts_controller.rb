@@ -5,7 +5,7 @@ class DebtsController < ApplicationController
   def index
    @debts = current_user.debts
   end
-
+  
   def show
    
   end
@@ -48,7 +48,7 @@ class DebtsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id]) 
   end
 
   def set_debt

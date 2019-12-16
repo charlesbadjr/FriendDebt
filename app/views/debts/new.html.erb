@@ -1,44 +1,64 @@
-#:total_debt, :debt_to, 
-#:description, :payment_amount, 
-#:interest_rate, 
-#:total_number_payments, :amount_remaining
 
 
-
-
-<h1 class="header" > Add Some Debt </h1>
-
-<%= form_for [@user, @debt] do |f| %>
-
-<div class="form">    
-
-  <div class="field" > 
-    <%= f.label :debt_to %>
-    <%= f.text_field :debt_to, required: true %>
-  </div>
-
-  <div class="field" >
-    <%= f.label :total_debt %>
-    <%= f.text_field :total_debt, required: true %>
-  </div>
-
-  <div class="field" >
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
   
-  <div class="field" >
-    <%= f.label :payment_amount %>
-    <%= f.text_field :payment_amount, required: true %>
-  </div>
-  
-  <div class="field" >
-    <%= f.label :interest_rate %>
-    <%= f.text_field :interest_rate, required: true %>
-  </div>
-  
-   
-  <%= f.submit %>
+  <h1 class="header" > Add Some Debt </h1>
+  <hr/>
 
-<% end %>
+<div class="col-md-12 mb-md-2 mb-8">
+  <form class="text-center border border-light p-5" >
+     <%= form_for [@user, @debt] do |f| %>
+  
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-form ">
+          <input type="text" id="defaultContactFormdebt_to" 
+             class="form-control mb-4" placeholder="Who do you owe?" > 
+          </input>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="mb-form">
+          <input type="text" id="defaultContactFormtotal_debt" 
+                   class="form-control mb-4" placeholder="Total"> 
+          </input>
+        </div>
+      </div>
+    </div>
+     
+     <div class="col-md-6">
+       <div class="md-form">
+          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" 
+             placeholder="Debt Description"></textarea>
+        </div>              
+     </div>
+
+     <div class="col-md-6">
+       <div class="md-form">
+           <input type="text" id="defaultContactFormpayment_amount" 
+                    class="form-control mb-4" placeholder="Payment Amount">
+           </input>       
+       </div>
+     </div>     
+           
+     <div class="col-md-6">
+       <div class="md-form">
+           <input type="text" id="defaultContactForminterest_rate" 
+                    class="form-control mb-4" placeholder="Interest Rate">  
+           </input>
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="col-md-12">
+          <button class="btn btn-info btn-block" type="submit"> 
+            Create 
+          </button>
+       </div>
+     </div>
+
+     <% end %>
+  </form>
+
 </div>

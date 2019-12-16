@@ -2,6 +2,21 @@ class StaticPagesController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :user_signed_in
 
+   
+
+  def index
+  
+  end
+
+  def new
+    
+  end
+
+  def show
+
+  end
+
+
   def about
   
   end
@@ -17,13 +32,11 @@ class StaticPagesController < ApplicationController
   private
 
   def user_signed_in
-    
     if user_signed_in?
       @user = current_user.id
      else
         @user = 1
     end
-
   end
 
 end
