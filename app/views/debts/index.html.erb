@@ -1,14 +1,46 @@
 
-<div >
-   <h1>Your current Debts are: </h1>
-  <ul>
-    <% @debts.each do |debt| %>
-      <li><%= link_to debt.debt_to, [@user, debt] %> <%= debt.description %> </li>
+<div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Your Current Debts Are:</h3>
 
-      
-    <% end %>
-  </ul>
-
- <%= link_to 'Create a new Debt', new_user_debt_path(@user) %>
-
- 
+<div class="card-body">
+  <div id="table" class="table-editable">
+    <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+          class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+    
+    <table class="table table-bordered table-responsive-md table-striped text-center">
+      <thead>
+        <tr>
+          <th class="text-center">Debt Owner</th>
+          <th class="text-center">Description</th>
+          <th class="text-center">Amount</th>
+          <th class="text-center">Interest Rate</th>
+          <th class="text-center">Payment</th>
+          <th class="text-center">Edit Details</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% @debts.each do |debt| %>
+        <tr>
+          <td class="pt-3-half"><%= link_to debt.debt_to, [@user, debt] %>  </td>
+          <td class="pt-3-half"><%= debt.description %> </td>
+          <td class="pt-3-half">$<%= debt.total_debt %> </td>
+          <td class="pt-3-half"><%= debt.interest_rate * 100 %>% </td>
+          <td class="pt-3-half">$<%= debt.payment_amount %> </td>
+          <td>
+            <span >
+               <button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
+                  Edit Debt Details
+               </button>
+            </span>
+          </td>
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
+  <hr/>    
+  <div >
+    <%= link_to ' Add Another Debt', new_user_debt_path(@user) %>
+  </div>
+</div>
+</div>
