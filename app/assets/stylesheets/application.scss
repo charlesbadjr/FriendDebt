@@ -2,8 +2,40 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
- 
+ @import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
 
+.welcome {
+	margin:10 auto;
+	width:250px;
+	font-family:'Lily Script One';
+	font-size:18px;
+	font-weight:bold;
+	text-align:left;
+	color: grey;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+.welcome:hover {
+	color:rgb(51, 83, 141);
+}
+
+
+.card {
+  height: 500px;
+  width: 100%;
+  background-color: transparent;
+}
+
+.card-body {
+  height: 75%;
+  background-color: #563e91;
+  align-content: center;
+  justify-content: center;
+}
  
 .custom_forms {
     display: flex;
@@ -13,5 +45,17 @@
 
 .header {
   text-align: center;
+}
+
+.body {
+  background-color: lightslategrey;
+  color: white;
+
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.774);
+  color: white;
+  align-self: baseline;
 }
 

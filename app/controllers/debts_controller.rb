@@ -7,16 +7,13 @@ class DebtsController < ApplicationController
   end
   
   def show
-   
   end
 
   def new
    @debt = Debt.new
-   
   end
 
   def edit
-  
   end
 
   def create

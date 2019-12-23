@@ -1,2 +1,38 @@
-<h1>Payments#new</h1>
-<p>Find me in app/views/payments/new.html.erb</p>
+<section class="mb-4">
+
+  <section id="contact" class="py-5" style="background-color: #563e91;">
+      <div class="container">
+         <h2 class="h1-responsive font-weight-bold text-center mb-5"> New Payment </h2>
+
+           <p class="text-center w-responsive mx-auto mb-5">
+               You are doing Great!! 
+           </p>
+    <hr/>
+
+    <h1><%= @debt.id ? 'Make a Payment' : 'Edit Payment' %></h1>
+    <hr />
+    
+<%= form_for [@debt, @payment] do |f| %>
+ <div class="field"> 
+   <%= f.label :amount_paid %>
+     <br />
+    <%= f.text_field :amount_paid, required: true, autofocus: true %>
+ </div>
+ <div class="field">
+   <%= f.label :paid %>
+     <br />
+   <%= f.check_box :paid, required: true %>
+ </div> 
+ <div class="field">
+   <%= f.label :comments %>
+    <br />
+   <%= f.text_area :comments, required: true %>
+ </div>
+
+ <%= f.submit %>
+<% end %>
+
+
+     </div>
+  </section>
+</section>
